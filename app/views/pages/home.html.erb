@@ -1,6 +1,35 @@
-      <h1>MYSLAND</h1>
+<h1 style="color: #0278ae; font-size: 50px" align="center">* MYSLAND *</h1>
 
+<div class="d-flex justify-content-center banner mt-3" style="
 
+  background-image: url(<%= image_path "ilhatop.jpg" %>)
+">
+  <div class="border border-dark p-3 col-md-4 mb-3" style="background-color: #f6f5f5">
+    <h3>Travel to paradise!</h3>
+         <div class="form-group">
+          <label for="Check-in">Check-in</label>
+          <input type="date" name="Check-in" class="form-control">
+          </form>
 
+      <form action=".">
+        <div class="form-group">
+          <label for="Check-out">Check-out</label>
+          <input type="date" name="Check-out" class="form-control">
+      </form>
+
+        </div>
+        <div class="col-auto my-2">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Choose destination:</label>
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <option selected>Choose...</option>
+            <option value="1">Central America</option>
+            <option value="2">Maldives</option>
+            <option value="3">Greece</option>
+          </select>
+        </div>
+          <button type="button" class="btn btn-primary">Search</button>
+    </div>
+  </div>
+</div>
 
 
