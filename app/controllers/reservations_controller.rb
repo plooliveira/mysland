@@ -13,8 +13,13 @@ class ReservationsController < ApplicationController
     @reservation.status = 0
     @reservation.user = current_user
     @reservation.save
-    # INCLUIR REDIRECT PARA PAYMENT
+    redirect_to payment_path(@reservation)
   end
+
+  def payment
+    @reservation = Reservation.find(params[:id])
+  end
+
 
   def index
     # TO DO

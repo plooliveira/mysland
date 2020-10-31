@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   get '/reservations', to: 'reservations#index'
-  get '/reservations/:id', to: 'reservations#show'
+  get '/reservations/:id', to: 'reservations#show', as: 'reservation'
+  get '/reservations/:id/payment', to: 'reservations#payment', as: 'payment'
+
 
 end

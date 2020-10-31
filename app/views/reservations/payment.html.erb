@@ -1,0 +1,13 @@
+<h1>Reservation Payment</h1>
+
+<div>
+  Your Reservation Summary:
+  <%= @reservation.id %>
+  <%= @reservation.check_in %>
+  <%= @reservation.check_out %>
+  <%= @reservation.user %>
+  <%= @reservation.island %>
+</div>
+
+
+<%= link_to "Pay now", reservation_path(@reservation), class: 'btn btn-primary' %>
