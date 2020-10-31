@@ -26,7 +26,6 @@ class ReservationsController < ApplicationController
 
   def show
     # TO DO
-    @island = Island.find(@reservation.island_id)
   end
 
   private
