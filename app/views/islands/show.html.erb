@@ -14,13 +14,8 @@
   </div>
 
   <div>
-      <h4>INCLUIR RENDER DO FORM DE FAZER RESERVA</h4>
-      <ul>
-        <li>Checkin</li>
-        <li>Checkout</li>
-        <li>Diária = <%= @island.price %></li>
-        <li>Preço Total = Preço * (Checkout - Checkin) </li>
-      </ul>
+      <h4>Make your reservation right now!</h4>
+      <%= render 'reservations/new' %>
   </div>
 </div>
 
