@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-
+  before_action :set_reservation, only: [:show, :payment]
   # reservation.status:
   # 0 = pending payment
   # 1 = payment done, pending approval by host
@@ -17,7 +17,6 @@ class ReservationsController < ApplicationController
   end
 
   def payment
-    @reservation = Reservation.find(params[:id])
   end
 
 
@@ -33,6 +32,10 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:check_in, :check_out)
+  end
+
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
   end
 
 end
