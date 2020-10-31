@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   resources :islands do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:create]
   end
 
   get '/reservations', to: 'reservations#index'
-  get '/reservations/:id', to: 'reservations#show'
+  get '/reservations/:id', to: 'reservations#show', as: 'reservation'
+  get '/reservations/:id/payment', to: 'reservations#payment', as: 'payment'
+
 
 end
