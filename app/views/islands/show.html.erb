@@ -5,6 +5,7 @@
 </div>
 
 
+
 <div class="d-flex bd-highlight">
   <div class="flex-grow-1">
     <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
@@ -14,10 +15,13 @@
   </div>
 
   <div>
-    <div class="w-75">
+    <div class="">
       <h4>Make your reservation right now!</h4>
       <%= render 'reservations/new' %>
+    </div>
   </div>
 </div>
 
-<%= link_to "Back to index", islands_path %>
+<h6 class="">
+  <%= link_to "Back", islands_path %>
+</h6>
