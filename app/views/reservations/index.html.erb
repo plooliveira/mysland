@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All Reservations</h1>
-      <th>List
+      <h1>My Reservations</h1>
+      <th>List of upcoming reservations
         <ul class="list-group">
           <% @reservations.each do |reservation| %>
             <li class="list-group-item">
-              <%= link_to reservation.name, reservations_path(reservations) %>
+              <%= link_to reservation.island.name, reservation_path(reservation) %>
             </li>
           <% end %>
         </ul>
