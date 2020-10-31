@@ -1,9 +1,27 @@
-<p class="mt-3">
-  <%= @island.name%>
-</p>
-<p class="mt-3">
-  <%= @island.description%>
-</p>
-<p class="mt-3">
-  $<%= @island.price%>
-</p>
+<div class="header">
+  <!-- style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1478827387698-1527781a4887?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')" -->
+  <h1><%= @island.name%></h1>
+  <p> <%= @island.location%></p>
+</div>
+
+
+<div class="d-flex bd-highlight">
+  <div class="flex-grow-1">
+    <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
+    <p class="mt-3">
+      <%= @island.description%>
+    </p>
+  </div>
+
+  <div>
+      <h4>INCLUIR RENDER DO FORM DE FAZER RESERVA</h4>
+      <ul>
+        <li>Checkin</li>
+        <li>Checkout</li>
+        <li>Diária = <%= @island.price %></li>
+        <li>Preço Total = Preço * (Checkout - Checkin) </li>
+      </ul>
+  </div>
+</div>
+
+<%= link_to "Back to index", islands_path %>
