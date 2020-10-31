@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    # TO DO
+    @reservations = Reservation.all
   end
 
   def show
