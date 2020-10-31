@@ -22,6 +22,7 @@ class ReservationsController < ApplicationController
 
   def index
     # TO DO
+    #
   end
 
   def show
