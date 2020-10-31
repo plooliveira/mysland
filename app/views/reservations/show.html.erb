@@ -7,18 +7,20 @@
         <%=@reservation.island.location%>
       </p>
       <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
-      <p class="w-75">
+      <p class="w-75 mt-4">
         <%= @reservation.island.description%>
       </p>
     </div>
     <div class="col-4 text-right">
-      <a href="#" class="btn btn-primary"> Fale com o Anfitrião</a>
       <ul class="mt-4 list-group">
         <li class="list-group-item">Check-in: <%= @reservation.check_in %></li>
         <li class="list-group-item">Check-out: <%= @reservation.check_out %></li>
         <li class="list-group-item">Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
         <li class="list-group-item">Your Tax ID: <%= @reservation.user.cpf %></li>
       </ul>
+      <a href="#" class="btn btn-primary mt-4">Talk to your host</a>
     </div>
+
+
   </div>
 </div>
