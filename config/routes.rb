@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   resources :islands do
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:new, :create]
   end
 
   get '/reservations', to: 'reservations#index'

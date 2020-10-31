@@ -1,5 +1,9 @@
 class ReservationsController < ApplicationController
 
+  def new
+    # TO DO
+  end
+
   def create
     # TO DO
   end
