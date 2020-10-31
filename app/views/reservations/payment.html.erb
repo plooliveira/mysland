@@ -1,13 +1,35 @@
 <h1>Reservation Payment</h1>
 
-<div>
-  Your Reservation Summary:
-  <%= @reservation.id %>
-  <%= @reservation.check_in %>
-  <%= @reservation.check_out %>
-  <%= @reservation.user %>
-  <%= @reservation.island %>
-</div>
+<h4>Your Reservation Summary:</h4>
 
+<ul>
+  <li>Island: <%= @reservation.island.name %></li>
+  <li>Check-in: <%= @reservation.check_in %></li>
+  <li>Check-out: <%= @reservation.check_out %></li>
+  <li>Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
+  <li>Your Tax ID: <%= @reservation.user.cpf %></li>
+</ul>
+
+<form action="#">
+  <div class="form-group">
+    <label for="card_number">Credit Card Number</label>
+    <input type="text" id="card_number" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="card_name">Credit Card Name</label>
+    <input type="text" id="card_name" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="expiry_date">Expiry Date</label>
+    <input type="text" id="expiry_date" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="ver_code">Verification Code</label>
+    <input type="text" id="ver_code" class="form-control">
+  </div>
+</form>
 
 <%= link_to "Pay now", reservation_path(@reservation), class: 'btn btn-primary' %>
