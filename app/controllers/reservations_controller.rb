@@ -22,11 +22,11 @@ class ReservationsController < ApplicationController
 
   def index
     # TO DO
+    #
   end
 
   def show
     # TO DO
-    @island = Island.find(@reservation.island_id)
   end
 
   private

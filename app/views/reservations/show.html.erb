@@ -1,13 +1,15 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-8">
-      <h2>Your reservation of <%= @island.name %> island
+      <h2>Your reservation of <%= @reservation.island.name %> island
       </h2>
       <p><strong>Location:</strong>
-        <%=@island.location%>
+        <%=@reservation.island.location%>
       </p>
       <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
-      <p class="w-75">Descrição da ilha bla blab labl ab lab labl bal balba labl blab labl balbalb albal balb laba lbal ablabl bla blab lbal bal bal balb lblablbal</p>
+      <p class="w-75">
+        <%= @reservation.island.description%>
+      </p>
     </div>
     <div class="col-4 text-right">
       <a href="#" class="btn btn-primary"> Fale com o Anfitrião</a>
