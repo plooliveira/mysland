@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-8">
+      <h2>Your reservation of <%= @island.name %> island
+      </h2>
+      <p><strong>Location:</strong>
+        <%=@island.location%>
+      </p>
+      <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
+      <p class="w-75">Descrição da ilha bla blab labl ab lab labl bal balba labl blab labl balbalb albal balb laba lbal ablabl bla blab lbal bal bal balb lblablbal</p>
+    </div>
+    <div class="col-4 text-right">
+      <a href="#" class="btn btn-primary"> Fale com o Anfitrião</a>
+      <ul class="mt-4 list-group">
+        <li class="list-group-item">Check-in: <%= @reservation.check_in %></li>
+        <li class="list-group-item">Check-out: <%= @reservation.check_out %></li>
+        <li class="list-group-item">Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
+        <li class="list-group-item">Your Tax ID: <%= @reservation.user.cpf %></li>
+      </ul>
+    </div>
+  </div>
+</div>
