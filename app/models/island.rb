@@ -4,10 +4,11 @@ class Island < ApplicationRecord
 
 
   include PgSearch::Model
-  pg_search_scope :search_do_allan,
+  pg_search_scope :island_pg_search,
     against: [ :name, :location, :description ],
+    # ignoring: :accents,
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true } # <-- now `superman batm` will return something
     }
 
 end

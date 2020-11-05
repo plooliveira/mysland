@@ -3,7 +3,15 @@ class IslandsController < ApplicationController
   before_action :set_island, only: [:show, :update, :destroy]
 
   def index
-    @islands = Island.all
+
+
+    if params[:query].present?
+      @islands = Island.island_pg_search(params[:query])
+    else
+      @islands = Island.all
+    end
+
+
   end
 
   def show

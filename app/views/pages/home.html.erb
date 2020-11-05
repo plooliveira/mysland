@@ -13,21 +13,15 @@
   </div>
 
   <div>
-  <form>
-    <!-- <label for="Search" style="font-size: 20px">Search now</label> -->
-      <input type="text" name="Search" class="form-control" placeholder="Your private island">
-  </form>
-
-    <div class="col-auto my-2">
-            <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Choose destination:</label> -->
-            <!-- <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Choose...</option>
-              <option value="1">Central America</option>
-              <option value="2">Maldives</option>
-              <option value="3">Greece</option>
-            </select> -->
-          </div>
-          <%= link_to "Search!", islands_path, class: 'btn btn-primary' %>
-      </div>
+    <%= form_tag islands_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Your private island"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
+
+
