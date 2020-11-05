@@ -27,6 +27,8 @@
 .card img {
   height: 100px;
   width: 100px;
+  margin: auto;
+  text-align: center;
 }
 
 .card p {
@@ -35,7 +37,7 @@
 
 .card {
   width: 260px;
-  height: 200px;
+  height: 300px;
   border-radius: 3px;
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
