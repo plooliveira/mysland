@@ -1,33 +1,71 @@
 
 <!-- <h1 style="color: #0278ae; font-size: 50px font-weight: bolder;" align="center">MYSLAND</h1> -->
 
-<div class="d-flex justify-content-around banner" style="
-  background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)),
-  url(<%= image_path "ilhatop.jpg" %>)"
-  >
-
-
+<div class="d-flex justify-content-around banner" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url(<%= image_path 'zunnoon-ahmed-06Fc_R9hA8w-unsplash.jpg' %>)">
   <div>
     <h1>MySland</h1>
     <p>Book a whole island, just for yourself!</p>
   </div>
 
   <div>
-  <form>
-    <!-- <label for="Search" style="font-size: 20px">Search now</label> -->
+    <form>
       <input type="text" name="Search" class="form-control" placeholder="Your private island">
-  </form>
-
-    <div class="col-auto my-2">
-            <!-- <label class="mr-sm-2" for="inlineFormCustomSelect">Choose destination:</label> -->
-            <!-- <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-              <option selected>Choose...</option>
-              <option value="1">Central America</option>
-              <option value="2">Maldives</option>
-              <option value="3">Greece</option>
-            </select> -->
-          </div>
-          <%= link_to "Search!", islands_path, class: 'btn btn-primary' %>
-      </div>
+      <%= link_to "Search!", islands_path, class: 'btn btn-primary' %>
+    </form>
   </div>
+</div>
+
+
+<div class="container">
+
+  <!-- <section> -->
+  <div class="d-flex mt-4">
+    <div class="about-box">
+      <%= image_tag "grand.jpg", height: '320', width: '520' %>
+      <h3 class="text-center mt-2">Wonderful islands around the world</h2>
+      <p class="text-justify">
+        MySland offers you exclusive private islands in exclusive places like the Caribbean, the French Riviera and the Italian coastline. You can book for a single weekend or for the whole summer.
+      </p>
+    </div>
+
+    <div class="about-box">
+      <%= image_tag "kudadoo.jpg", height: '320', width: '520' %>
+      <h3 class="text-center mt-2">Privacy and a unique experience</h2>
+      <p class="text-justify">
+        You'll have the entire island for yourself. MySland also offers concierge services so you don't have to worry about anything: transportation, supplies and staffing are all handled for you.
+      </p>
+    </div>
+  </div>
+  <!-- </section> -->
+
+
+  <!-- <section> -->
+  <h2 class="text-center mt-4">How it works</h2>
+  <div class="cards">
+    <div class="card">
+      <%= image_tag "location_search.png" %>
+      <h4>Filter down to your perfect fit</h4>
+      <p>Personalize your search with filters—like price range or a pool—to get exactly what you want.</p>
+    </div>
+
+    <div class="card">
+      <%= image_tag "moments.png" %>
+      <h4>Dig into the details</h4>
+      <p>Check out the photos. Then, read guest reviews from past reservations to learn what it’s like in person.</p>
+    </div>
+
+    <div class="card">
+      <%= image_tag "Booking.png" %>
+      <h4>Book with peace of mind</h4>
+      <p>We keep your info safe and follow global security standards to process your payments.</p>
+    </div>
+
+    <div class="card">
+      <%= image_tag "having_fun.png" %>
+      <h4>Arrive and enjoy!</h4>
+      <p>Your host is only a message away if you have any questions. They can also offer local tips and advice.</p>
+    </div>
+  </div>
+  <!-- </section> -->
+
 </div>
