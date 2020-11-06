@@ -10,11 +10,7 @@ class IslandsController < ApplicationController
   def show
     @island = Island.find(params[:id])
     @reservation = Reservation.new
-
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = [{ lat: @island.latitude, lng: @island.longitude }]
-
-
   end
 
   def new
