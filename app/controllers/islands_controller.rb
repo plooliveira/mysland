@@ -32,6 +32,12 @@ class IslandsController < ApplicationController
   end
 
   def destroy
+    @island.delete
+    redirect_to dashboard_path
+  end
+
+  def dashboard
+    @islands = current_user.islands
   end
 
   private
