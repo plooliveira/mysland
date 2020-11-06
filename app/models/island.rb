@@ -3,6 +3,7 @@ class Island < ApplicationRecord
   has_many :users, through: :reservations
 
 
+
   include PgSearch::Model
   pg_search_scope :island_pg_search,
     against: [ :name, :location, :description ],
@@ -10,5 +11,8 @@ class Island < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something
     }
+
+
+  has_one_attached :image
 
 end

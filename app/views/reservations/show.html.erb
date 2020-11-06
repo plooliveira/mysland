@@ -7,7 +7,10 @@
       <p><strong>Location:</strong>
         <%=@reservation.island.location%>
       </p>
-      <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div>
+      <p>
+        <%= cl_image_tag @reservation.island.image.key, height: 300, width: 400, crop: :fill %>
+      </p>
+      <!-- <div class="island-image" style="background-image: url('https://source.unsplash.com/500x400/?island')"></div> -->
       <p class="w-75 mt-4">
         <%= @reservation.island.description%>
       </p>
@@ -26,3 +29,4 @@
 
   </div>
 </div>
+

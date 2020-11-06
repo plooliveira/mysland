@@ -2,6 +2,10 @@
 
 <h4>Your Reservation Summary:</h4>
 
+<p>
+  <%= cl_image_tag @reservation.island.image.key, height: 300, width: 400, crop: :fill %>
+</p>
+
 <ul>
   <li>Island: <%= @reservation.island.name %></li>
   <li>Check-in: <%= @reservation.check_in %></li>
