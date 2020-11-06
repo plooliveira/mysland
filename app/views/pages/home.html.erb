@@ -8,10 +8,15 @@
   </div>
 
   <div>
-    <form>
-      <input type="text" name="Search" class="form-control mb-2" placeholder="Your private island">
-      <%= link_to "Search!", islands_path, class: 'btn btn-primary' %>
-    </form>
+
+    <%= form_tag islands_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Your private island"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 
@@ -35,6 +40,7 @@
         You'll have the entire island for yourself. MySland also offers concierge services so you don't have to worry about anything: transportation, supplies and staffing are all handled for you.
       </p>
     </div>
+
   </div>
   <!-- </section> -->
 
@@ -69,3 +75,5 @@
   <!-- </section> -->
 
 </div>
+
+
