@@ -41,7 +41,7 @@ class IslandsController < ApplicationController
 
   def destroy
     if current_user == @island.user
-      @island.delete
+      @island.destroy
       redirect_to dashboard_path
     end
   end

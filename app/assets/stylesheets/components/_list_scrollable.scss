@@ -1,11 +1,19 @@
 
 .scroll-custom{
   max-height: 700px;
+  min-height: 600px;
   margin-bottom: 10px;
   overflow-y:scroll;
   -webkit-overflow-scrolling: touch;
 }
-
+@media (min-width: 1000px){
+  .container-dash
+    {
+      margin: 0 auto;
+      width: 1200px; 
+    }
+  }
+  
 .listTextStyle p {
   line-height: .7;
 }
