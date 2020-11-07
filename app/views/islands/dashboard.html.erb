@@ -21,13 +21,13 @@
                   Location: <%=island.location%>
                 </p>
                 <p>
-                  Price: $<%=island.price%>
+                  Daily Price: US <%= number_to_currency(island.price)%>
                 </p>
 
               </div>
               <div class="d-block mt-2 mr-1 ">
 
-                <%= link_to edit_island_path(island), class: " btn btn-primary"  do %>
+                <%= link_to edit_island_path(island), class: " btn btn-success"  do %>
                 <i class="fas fa-pen"></i>
                 <%end%>
                 <%= link_to island_path(island), method: 'delete', class: " btn btn-danger"  do %>
