@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/reservations/:id/payment', to: 'reservations#payment', as: 'payment'
   get '/reservations/:id/payment_ok', to: 'reservations#payment_ok', as: 'payment_ok'
 
+
 end
