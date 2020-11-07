@@ -1,0 +1,42 @@
+
+.scroll-custom{
+  max-height: 700px;
+  min-height: 600px;
+  margin-bottom: 10px;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 1000px){
+  .container-dash
+    {
+      margin: 0 auto;
+      width: 1200px; 
+    }
+  }
+  
+.listTextStyle p {
+  line-height: .7;
+}
+/* custom scrollbar */
+.scroll-custom::-webkit-scrollbar {
+  width: 20px;
+}
+
+.scroll-custom::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.scroll-custom::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.avoid-clicks {
+  pointer-events: none;
+}

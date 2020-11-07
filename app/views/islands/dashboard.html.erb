@@ -1,0 +1,94 @@
+<% status = ['Waiting', 'Payment aproved', 'Confirmed', 'Canceled']%>
+<div class="container-dash mt-5">
+  <div class="row">
+    <div class="col-7">
+      <div class="panel panel-primary" id="result_panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">My islands</h3>
+        </div>
+        <div class="panel-body p-0">
+          <ul class="list-group <%= @islands.length > 1 ? 'scroll-custom' : '' %> ">
+            <%@islands.each do |island| %>
+
+            <li class="list-group-item d-flex justify-content-between p-0 mb-3">
+              <div class="mr-4" style="min-width: 150px; height: 150px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url(<%="https://source.unsplash.com/500x400/?island?sig=#{island.id}"%>); background-position: center; background-size: cover;">
+              </div>
+              <div class="d-block mt-4 mr-4 listTextStyle">
+                <p>
+                  Name: <%=island.name%>
+                </p>
+                <p>
+                  Location: <%=island.location%>
+                </p>
+                <p>
+                  Price: $<%=island.price%>
+                </p>
+
+              </div>
+              <div class="d-block mt-2 mr-1 ">
+
+                <%= link_to edit_island_path(island), class: " btn btn-primary"  do %>
+                <i class="fas fa-pen"></i>
+                <%end%>
+                <%= link_to island_path(island), method: 'delete', class: " btn btn-danger"  do %>
+                <i class="fas fa-trash-alt"></i>
+                <%end%>
+
+              </div>
+            </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class=" col-5">
+      <div class="panel panel-primary" id="result_panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">My pending booking confirmations</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group scroll-custom ">
+            <%@islands.each do |island| %>
+            <%island.reservations.each do |reservation| %>
+            <li class="list-group-item d-flex justify-content-between p-0 mb-3">
+              <div class="d-flex align-items-start" style=" max-width: 300px;">
+                <div class="mr-4" style="min-width: 90px; height: 125px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url(<%="https://source.unsplash.com/500x400/?adult-person?sig=#{reservation.id}"%>); background-position: center; background-size: cover;">
+                </div>
+                <div class="d-block mt-2 listTextStyle" ">
+                  <p>
+                    User: <%=reservation.user.first_name%>
+                  </p>
+                  <p>
+                    User: <%=reservation.island.name%>
+                  </p>
+                  <p>
+                    Check-in: <%=reservation.check_in%>
+                  </p>
+                  <p>
+                    Check-out: <%=reservation.check_out%>
+                  </p>
+                  <p>
+                    Status: <%=status[reservation.status]%>
+                  </p>
+
+                </div>
+              </div>
+              <div class=" mt-2 mr-1">
+                  <%= link_to confirmation_path(reservation), class: " #{ reservation.status != 2 ? reservation.status == 3 ? 'btn btn-outline-secondary avoid-clicks' : 'btn btn-success' : 'btn btn-success avoid-clicks' }"  do %>
+                  <i class="fas fa-check"></i>
+                  <%end%>
+                  <%= link_to cancelation_path(reservation), class: "#{ reservation.status != 3 ? reservation.status == 2 ? 'btn btn-outline-secondary avoid-clicks' : 'btn btn-danger' : 'btn btn-danger avoid-clicks' }" do %>
+                  <i class="fas fa-times"></i>
+                  <%end%>
+                </div>
+            </li>
+            <%end%>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
