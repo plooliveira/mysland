@@ -4,7 +4,10 @@
     <div class="col-7">
       <div class="panel panel-primary" id="result_panel">
         <div class="panel-heading">
-          <h3 class="panel-title">My islands</h3>
+          <h3 class="panel-title d-flex justify-content-between">My islands
+            <a><%= link_to new_island_path(@island), class: "btn btn-outline-dark btn-lg mr-2" do %>New Island</a>
+            <%end%>
+          </h3>
         </div>
         <div class="panel-body p-0">
           <ul class="list-group <%= @islands.length > 1 ? 'scroll-custom' : '' %> ">
