@@ -3,12 +3,20 @@ class IslandsController < ApplicationController
   before_action :set_island, only: [:show, :update, :destroy, :edit]
 
   def index
-    @islands = Island.all
+    if params[:query].present?
+      @islands = Island.island_pg_search(params[:query])
+    else
+      @islands = Island.all
+    end
+
+
+
   end
 
   def show
     @island = Island.find(params[:id])
     @reservation = Reservation.new
+    @markers = [{ lat: @island.latitude, lng: @island.longitude }]
   end
 
   def new
@@ -20,7 +28,6 @@ class IslandsController < ApplicationController
     print current_user
     @island.user_id = current_user.id
     if @island.save
-      puts 'aquiiiiii'
       redirect_to islands_path
     end
   end
@@ -39,7 +46,7 @@ class IslandsController < ApplicationController
   private
 
   def island_params
-    params.require(:island).permit(:name, :description, :price, :location)
+    params.require(:island).permit(:name, :description, :price, :location, :image, :address)
   end
 
   def set_island

@@ -9,6 +9,9 @@
           <%= f.input :description, as: :text, :input_html => { class: 'description_area', :cols => 5, :rows => 10 } %>
           <%= f.input :price %>
           <%= f.input :location %>
+          <%= f.input :address %>
+          <%= f.input :image, as: :file %>
+
 
         </div>
 
@@ -16,7 +19,6 @@
           <%= f.button :submit, "Register", class:"btn btn-primary"%>
         </div>
         <% end %>
-
 
       </div>
     </div>
