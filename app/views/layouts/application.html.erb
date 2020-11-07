@@ -14,14 +14,14 @@
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
-  <% if params[:action] != "home" ||  params[:action] != "dashboard" %>
-  <div class="container">
-    <%= yield %>
-  </div>
+  <% if params[:action] != "home" &&  params[:action] != "dashboard" %>
+    <div class="container">
+      <%= yield %>
+    </div>
   <% else %>
-  <%= yield %>
+    <%= yield %>
   <% end %>
-  </div>
+
 
   <div class="footer">
     <div class="links">
