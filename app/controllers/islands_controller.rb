@@ -36,7 +36,7 @@ class IslandsController < ApplicationController
   end
 
   def update
-    @islands.update(island_params)
+    @island.update(island_params)
     redirect_to islands_path(@island)
   end
 
