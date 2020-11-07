@@ -1,3 +1,5 @@
+<% status = ['Waiting', 'Payment approved', 'Confirmed', 'Canceled']%>
+
 <div class="container mt-5">
   <div class="row">
 
@@ -20,8 +22,10 @@
       <ul class="mt-4 list-group">
         <li class="list-group-item">Check-in: <%= @reservation.check_in %></li>
         <li class="list-group-item">Check-out: <%= @reservation.check_out %></li>
+        <li class="list-group-item">Total price: US<%= number_to_currency( @reservation.island.price * ( @reservation.check_out - @reservation.check_in ).to_i ) %></li>
         <li class="list-group-item">Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
         <li class="list-group-item">Your Tax ID: <%= @reservation.user.cpf %></li>
+        <li class="list-group-item">Status of your reservation: <%= status[@reservation.status] %></li>
       </ul>
       <a href="#" class="btn btn-primary mt-4">Talk to your host</a>
     </div>
