@@ -32,8 +32,10 @@ class IslandsController < ApplicationController
   end
 
   def destroy
-    @island.delete
-    redirect_to dashboard_path
+    if current_user == @island.user
+      @island.delete
+      redirect_to dashboard_path
+    end
   end
 
   def dashboard
