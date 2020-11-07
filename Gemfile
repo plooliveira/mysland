@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'inline_svg'
 gem 'devise'
+gem 'turbolinks_render'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
