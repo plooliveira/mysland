@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get '/reservations/:id/confirmation', to: 'reservations#confirmation', as: 'confirmation'
   get '/reservations/:id/cancelation', to: 'reservations#cancelation', as: 'cancelation'
   
+  get '/reservations/:id/payment_ok', to: 'reservations#payment_ok', as: 'payment_ok'
+
 
 end
