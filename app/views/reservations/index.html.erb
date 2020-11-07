@@ -1,11 +1,14 @@
 <% status = ['Waiting', 'Payment approved', 'Confirmed', 'Canceled']%>
 
 <div class="container">
- <h1 class="">My Reservations</h1>
-  <div class="cards">
+
+ <h1 class="header-reserv">My Reservations</h1>
+
+  <div class="cards-container">
+
   <% @reservations.each do |reservation| %>
     <div class="card-reserv">
-    <%= cl_image_tag reservation.island.image.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag reservation.island.image.key, crop: :fill %>
       <h2><%= reservation.island.name %></h2>
       <p>Check-in: <%= reservation.check_in %></p>
       <p>Check-out: <%= reservation.check_out %></p>
