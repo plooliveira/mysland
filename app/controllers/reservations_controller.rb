@@ -19,6 +19,13 @@ class ReservationsController < ApplicationController
   def payment
   end
 
+  def payment_ok
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = 1
+    @reservation.save
+    redirect_to reservation_path(@reservation)
+  end
+
 
   def index
     @reservations = Reservation.all

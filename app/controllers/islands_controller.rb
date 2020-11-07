@@ -28,7 +28,6 @@ class IslandsController < ApplicationController
     print current_user
     @island.user_id = current_user.id
     if @island.save
-      puts 'aquiiiiii'
       redirect_to islands_path
     end
   end
