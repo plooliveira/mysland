@@ -1,14 +1,21 @@
 <div class="header">
   <!-- style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1478827387698-1527781a4887?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')" -->
   <h1>Myslands around the world</h1>
-  <p>Awesome islands for your next uniqueness experience</p>
+
+  <% if @islands.empty? %>
+      <p>Sorry, we found no islands for you =(</p>
+  <% else %>
+      <p>Awesome islands for your next uniqueness experience</p>
+  <% end %>
 </div>
 
 <div class="container">
   <div class="row">
     <% @islands.each do |island| %>
+    <% background_url = island.image.attached? ? cl_image_path(island.image.key, width: 400, height: 500, crop: :fill) : 'https://source.unsplash.com/500x400/?island' %>
+    <%# background_url = island.photo.attached? ? cl_image_path(island.photo.key, width: 400, height: 500, crop: :fill) : 'https://source.unsplash.com/500x400/?island' %>
     <div class="col-12 col-md-6 col-lg-3 mt-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url('https://source.unsplash.com/500x400/?island');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
         <div class="card-description">
           <h2><%= island.name %></h2>
         </div>
