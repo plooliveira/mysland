@@ -7,14 +7,13 @@
   </div>
 
   <div>
-
     <%= form_tag islands_path, method: :get do %>
     <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Your private island"
       %>
-    <%= submit_tag "Search", class: "btn btn-primary mt-3" %>
+    <%= submit_tag "Search", class: "btn btn-warning mt-3" %>
     <% end %>
   </div>
 </div>
@@ -26,7 +25,7 @@
     <div class="about-box">
       <%= image_tag "grand.jpg", height: '320', width: '520' %>
       <h3 class="text-center mt-2">Wonderful islands around the world</h2>
-        <p class="text-justify">
+        <p class="text-center">
           MySland offers you exclusive private islands in exclusive places like the Caribbean, the French Riviera and the Italian coastline. You can book for a single weekend or for the whole summer.
         </p>
     </div>
@@ -34,7 +33,7 @@
     <div class="about-box">
       <%= image_tag "kudadoo.jpg", height: '320', width: '520' %>
       <h3 class="text-center mt-2">Privacy and a unique experience</h2>
-        <p class="text-justify">
+        <p class="text-center">
           You'll have the entire island for yourself. MySland also offers concierge services so you don't have to worry about anything: transportation, supplies and staffing are all handled for you.
         </p>
     </div>
