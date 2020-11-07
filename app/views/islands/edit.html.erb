@@ -1,0 +1,22 @@
+<h1>Edit your Island</h1>
+
+<div class="row justify-content-center p-5">
+  <div class="col-md-6">
+    <div>
+      <div class="p-3 border bg-light">
+        <h2>Edit your island:</h2>
+        <%= simple_form_for @island do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name  %>
+          <%= f.input :description, as: :text, :input_html => { class: 'description_area', :cols => 5, :rows => 10 } %>
+          <%= f.input :price %>
+          <%= f.input :location %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update", class:"btn btn-primary"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

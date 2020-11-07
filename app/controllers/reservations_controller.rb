@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :payment]
+  before_action :set_reservation, only: [:show, :payment, :confirmation, :cancelation]
   # reservation.status:
   # 0 = pending payment
   # 1 = payment done, pending approval by host
@@ -35,6 +35,18 @@ class ReservationsController < ApplicationController
     # TO DO
   end
 
+  def confirmation
+    @reservation.status = 2
+    if @reservation.save
+      redirect_to dashboard_path
+    end
+  end
+  def cancelation
+    @reservation.status = 3
+    if @reservation.save
+      redirect_to dashboard_path
+    end
+  end
   private
 
   def reservation_params

@@ -5,17 +5,17 @@
 <h4>Your Reservation Summary:</h4>
 
 <p>
-  <%= cl_image_tag @reservation.island.image.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @reservation.island.image.key, width: 500, crop: :fill %>
 </p>
 
-<ul>
-  <li>Island: <%= @reservation.island.name %></li>
-  <li>Check-in: <%= @reservation.check_in %></li>
-  <li>Check-out: <%= @reservation.check_out %></li>
-  <li>Total price: US<%= number_to_currency( @reservation.island.price * ( @reservation.check_out - @reservation.check_in ).to_i ) %></li>
-  <li>Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
-  <li>Your Tax ID: <%= @reservation.user.cpf %></li>
-  <li>Status of your reservation: <%= status[@reservation.status] %></li>
+<ul class="mt-4 mb-4 list-group">
+  <li class="list-group-item">Island: <%= @reservation.island.name %></li>
+  <li class="list-group-item">Check-in: <%= @reservation.check_in %></li>
+  <li class="list-group-item">Check-out: <%= @reservation.check_out %></li>
+  <li class="list-group-item">Total price: US<%= number_to_currency( @reservation.island.price * ( @reservation.check_out - @reservation.check_in ).to_i ) %></li>
+  <li class="list-group-item">Your name: <%= "#{@reservation.user.first_name} #{@reservation.user.last_name}"%></li>
+  <li class="list-group-item">Your Tax ID: <%= @reservation.user.cpf %></li>
+  <li class="list-group-item">Status of your reservation: <%= status[@reservation.status] %></li>
 </ul>
 
 <form action="#">

@@ -1,6 +1,6 @@
 class IslandsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_island, only: [:show, :update, :destroy]
+  before_action :set_island, only: [:show, :update, :destroy, :edit]
 
   def index
     if params[:query].present?
@@ -36,9 +36,19 @@ class IslandsController < ApplicationController
   end
 
   def update
+    @island.update(island_params)
+    redirect_to islands_path(@island)
   end
 
   def destroy
+    if current_user == @island.user
+      @island.destroy
+      redirect_to dashboard_path
+    end
+  end
+
+  def dashboard
+    @islands = current_user.islands
   end
 
   private
