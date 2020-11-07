@@ -1,3 +1,5 @@
+<% status = ['Waiting', 'Payment approved', 'Confirmed', 'Canceled']%>
+
 <div class="container">
 
  <h1 class="header-reserv">My Reservations</h1>
@@ -6,15 +8,13 @@
 
   <% @reservations.each do |reservation| %>
     <div class="card-reserv">
-    <%= image_tag "island-maldives.jpg", height: '250', width: '280' %>
+    <%= cl_image_tag reservation.island.image.key, height: 300, width: 400, crop: :fill %>
       <h2><%= reservation.island.name %></h2>
-      <h4>Informações da Reserva</h4>
       <p>Check-in: <%= reservation.check_in %></p>
       <p>Check-out: <%= reservation.check_out %></p>
-      <p>Price: <%= reservation.island.price %></p>
-      <p>Status da Reserva:<%= reservation.status %></p>
-      <p>Maiores detalhes:
-      <%= link_to reservation.island.name, reservation_path(reservation) %>
+      <p>Total price: US<%= number_to_currency( reservation.island.price * ( reservation.check_out - reservation.check_in ).to_i ) %></p>
+      <p>Status: <%= status[reservation.status] %></p>
+      <%= link_to "Further info", reservation_path(reservation) %>
       </p>
     </div>
   <%end%>

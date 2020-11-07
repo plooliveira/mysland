@@ -1,17 +1,20 @@
-<% status = ['Waiting', 'Payment aproved', 'Confirmed', 'Canceled']%>
+<% status = ['Waiting', 'Payment approved', 'Confirmed', 'Canceled']%>
 <div class="container-dash mt-5">
   <div class="row">
     <div class="col-7">
       <div class="panel panel-primary" id="result_panel">
         <div class="panel-heading">
-          <h3 class="panel-title">My islands</h3>
+          <h3 class="panel-title d-flex justify-content-between">My islands
+            <a><%= link_to new_island_path(@island), class: "btn btn-outline-dark btn-lg mr-2" do %>New Island</a>
+            <%end%>
+          </h3>
         </div>
         <div class="panel-body p-0">
           <ul class="list-group <%= @islands.length > 1 ? 'scroll-custom' : '' %> ">
             <%@islands.each do |island| %>
 
             <li class="list-group-item d-flex justify-content-between p-0 mb-3">
-              <div class="mr-4" style="min-width: 150px; height: 150px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url(<%="https://source.unsplash.com/500x400/?island?sig=#{island.id}"%>); background-position: center; background-size: cover;">
+              <div class="mr-4" style="min-width: 150px; height: 150px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(<%= cl_image_path island.image.key %>); background-position: center; background-size: cover;">
               </div>
               <div class="d-block mt-4 mr-4 listTextStyle">
                 <p>
@@ -51,10 +54,10 @@
             <%@islands.each do |island| %>
             <%island.reservations.each do |reservation| %>
             <li class="list-group-item d-flex justify-content-between p-0 mb-3">
-              <div class="d-flex align-items-start" style=" max-width: 300px;">
-                <div class="mr-4" style="min-width: 90px; height: 125px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.5)), url(<%="https://source.unsplash.com/500x400/?adult-person?sig=#{reservation.id}"%>); background-position: center; background-size: cover;">
+              <div class="d-flex align-items-start" style=" max-width: 500px;">
+                <div class="mr-4" style="width: 150px; height: 150px; background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3)), url(<%= cl_image_path island.image.key %>); background-position: center; background-size: cover;">
                 </div>
-                <div class="d-block mt-2 listTextStyle" ">
+                <div class="d-block mt-2 listTextStyle" >
                   <p>
                     User: <%=reservation.user.first_name%>
                   </p>

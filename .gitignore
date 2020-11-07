@@ -36,9 +36,19 @@ yarn-debug.log*
 .yarn-integrity
 # Ignore .env file containing credentials.
 .env*
+CLOUDINARY_URL=cloudinary://215274293354898:dgnN979-82cqZ8NHBgH7j0q6lzE@lewagonmktplace
+
+
+
+
+
+11h13
+MAPBOX_API_KEY=pk.eyJ1Ijoic2FudG9zanIiLCJhIjoiY2tmN2FpcWVnMDBoeTJ6bm94YWM4c2l5NSJ9.9Nx1KFpjdoDe9DT_jBI85Q
 
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
+.env*
+.env*
 .env*
 .env*

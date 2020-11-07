@@ -18,10 +18,12 @@
     </p>
   </div>
 
-  <div style="width: 400px;">
-    <h4>Make your reservation right now!</h4>
-    <%= render 'reservations/new' %>
-  </div>
+  <% unless @island.user_id == current_user.id %>
+    <div style="width: 400px;">
+      <h4>Make your reservation right now!</h4>
+      <%= render 'reservations/new' %>
+    </div>
+  <% end %>
 </div>
 
 <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
